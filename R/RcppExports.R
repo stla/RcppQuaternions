@@ -2,50 +2,50 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 quatProd <- function(q1, q2) {
-    .Call('_RcppQuaternions_quatProd', PACKAGE = 'RcppQuaternions', q1, q2)
+    .Call(`_RcppQuaternions_quatProd`, q1, q2)
 }
 
 fromAxisAngle_ <- function(axis, angle) {
-    .Call('_RcppQuaternions_fromAxisAngle_', PACKAGE = 'RcppQuaternions', axis, angle)
+    .Call(`_RcppQuaternions_fromAxisAngle_`, axis, angle)
 }
 
 fromQuaternion_ <- function(v) {
-    .Call('_RcppQuaternions_fromQuaternion_', PACKAGE = 'RcppQuaternions', v)
+    .Call(`_RcppQuaternions_fromQuaternion_`, v)
 }
 
 toAxisAngle_ <- function(v) {
-    .Call('_RcppQuaternions_toAxisAngle_', PACKAGE = 'RcppQuaternions', v)
+    .Call(`_RcppQuaternions_toAxisAngle_`, v)
 }
 
 getRotation_ <- function(a, b) {
-    .Call('_RcppQuaternions_getRotation_', PACKAGE = 'RcppQuaternions', a, b)
+    .Call(`_RcppQuaternions_getRotation_`, a, b)
 }
 
 AngleAxis2quaternion <- function(angl, axs) {
-    .Call('_RcppQuaternions_AngleAxis2quaternion', PACKAGE = 'RcppQuaternions', angl, axs)
+    .Call(`_RcppQuaternions_AngleAxis2quaternion`, angl, axs)
 }
 
 Matrix2AxisAngle_ <- function(m) {
-    .Call('_RcppQuaternions_Matrix2AxisAngle_', PACKAGE = 'RcppQuaternions', m)
+    .Call(`_RcppQuaternions_Matrix2AxisAngle_`, m)
 }
 
 toQuaternion_ <- function(m) {
-    .Call('_RcppQuaternions_toQuaternion_', PACKAGE = 'RcppQuaternions', m)
+    .Call(`_RcppQuaternions_toQuaternion_`, m)
 }
 
 AngleAxis2matrix_ <- function(angl, axs) {
-    .Call('_RcppQuaternions_AngleAxis2matrix_', PACKAGE = 'RcppQuaternions', angl, axs)
+    .Call(`_RcppQuaternions_AngleAxis2matrix_`, angl, axs)
 }
 
 normalized <- function(v) {
-    .Call('_RcppQuaternions_normalized', PACKAGE = 'RcppQuaternions', v)
+    .Call(`_RcppQuaternions_normalized`, v)
 }
 
 slerp_ <- function(q1, q2, t) {
-    .Call('_RcppQuaternions_slerp_', PACKAGE = 'RcppQuaternions', q1, q2, t)
+    .Call(`_RcppQuaternions_slerp_`, q1, q2, t)
 }
 
 rversors_ <- function(n) {
-    .Call('_RcppQuaternions_rversors_', PACKAGE = 'RcppQuaternions', n)
+    .Call(`_RcppQuaternions_rversors_`, n)
 }
 
