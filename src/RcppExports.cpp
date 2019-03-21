@@ -122,25 +122,15 @@ BEGIN_RCPP
 END_RCPP
 }
 // slerp_
-Rcpp::NumericVector slerp_(const Rcpp::NumericVector& q1, const Rcpp::NumericVector& q2, const double t);
+Rcpp::NumericMatrix slerp_(const Rcpp::NumericVector& q1, const Rcpp::NumericVector& q2, const Rcpp::NumericVector& t);
 RcppExport SEXP _RcppQuaternions_slerp_(SEXP q1SEXP, SEXP q2SEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type q1(q1SEXP);
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type q2(q2SEXP);
-    Rcpp::traits::input_parameter< const double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type t(tSEXP);
     rcpp_result_gen = Rcpp::wrap(slerp_(q1, q2, t));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rversor_
-Rcpp::NumericVector rversor_();
-RcppExport SEXP _RcppQuaternions_rversor_() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rversor_());
     return rcpp_result_gen;
 END_RCPP
 }
@@ -168,7 +158,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RcppQuaternions_AngleAxis2matrix_", (DL_FUNC) &_RcppQuaternions_AngleAxis2matrix_, 2},
     {"_RcppQuaternions_normalized", (DL_FUNC) &_RcppQuaternions_normalized, 1},
     {"_RcppQuaternions_slerp_", (DL_FUNC) &_RcppQuaternions_slerp_, 3},
-    {"_RcppQuaternions_rversor_", (DL_FUNC) &_RcppQuaternions_rversor_, 0},
     {"_RcppQuaternions_rversors_", (DL_FUNC) &_RcppQuaternions_rversors_, 1},
     {NULL, NULL, 0}
 };

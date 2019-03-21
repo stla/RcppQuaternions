@@ -1,0 +1,7 @@
+library(RcppQuaternions)
+library(rgl)
+q1 <- c(0,1,0,0)
+q2 <- c(0,0,1,0)
+qs <- slerp(q1, q2, seq(0, 1, length.out = 10))
+spheres3d(0, 0, 0, 1, color="red", alpha=0.3)
+points3d(qs[,-1])

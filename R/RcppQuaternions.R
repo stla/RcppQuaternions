@@ -94,3 +94,29 @@ AxisAngle <- function(axis, angle){
   AngleAxis2matrix_(angle, axis)
 }
 
+#' Slerp
+#' @description Interpolation of quaternions
+#' @param q1,q2 quaternions
+#' @param t numeric vector
+#' @return A matrix with \code{length(t)} rows, each row being an interpolated 
+#' quaternion.
+#' @examples 
+#' # spherical interpolation
+#' library(rgl)
+#' q1 <- c(0,1,0,0)
+#' q2 <- c(0,0,1,0)
+#' qs <- slerp(q1, q2, seq(0, 1, length.out = 10))
+#' spheres3d(0, 0, 0, 1, color="red", alpha=0.3)
+#' points3d(qs[,-1])
+
+slerp <- function(q1, q2, t){
+  slerp_(q1, q2, t)
+}
+
+#' Random quaternions
+#' @description Uniform sampling of unit quaternions
+#' @param n positive integer, the sample size
+#' @return The sampled quaternions stacked in a matrix with \code{n} rows.
+rversor <- function(n = 1){
+  rversors_(n)
+}

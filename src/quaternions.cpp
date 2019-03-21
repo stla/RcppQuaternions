@@ -137,22 +137,41 @@ Rcpp::NumericVector normalized(const Rcpp::NumericVector & v)
   return Rcpp::NumericVector::create(qn.w(), qn.x(), qn.y(), qn.z());
 }	
 
+// Rcpp::NumericVector	slerp0_(const Rcpp::NumericVector & q1, 
+//                            const Rcpp::NumericVector & q2, 
+//                            const double t)
+// {
+//   Eigen::Quaterniond qa(q1[0], q1[1], q1[2], q1[3]);
+//   Eigen::Quaterniond qb(q2[0], q2[1], q2[2], q2[3]);
+//   Eigen::Quaterniond q = qa.slerp(t, qb);
+//   return Rcpp::NumericVector::create(q.w(), q.x(), q.y(), q.z());
+// }
+
 // [[Rcpp::export]]
-Rcpp::NumericVector	slerp_(const Rcpp::NumericVector & q1, 
+Rcpp::NumericMatrix	slerp_(const Rcpp::NumericVector & q1, 
                            const Rcpp::NumericVector & q2, 
-                           const double t)
+                           const Rcpp::NumericVector & t)
 {
+  if(q1.size() != 4 || q2.size() != 4){
+    throw Rcpp::exception("q1 and q2 must be quaternions");
+  }
   Eigen::Quaterniond qa(q1[0], q1[1], q1[2], q1[3]);
   Eigen::Quaterniond qb(q2[0], q2[1], q2[2], q2[3]);
-  Eigen::Quaterniond q = qa.slerp(t, qb);
-  return Rcpp::NumericVector::create(q.w(), q.x(), q.y(), q.z());
+  Rcpp::NumericMatrix out(t.size(), 4);
+  for(unsigned i=0; i<t.size(); i++){
+    Eigen::Quaterniond q = qa.slerp(t[i], qb);
+    out(i,0) = q.w();
+    out(i,1) = q.x();
+    out(i,2) = q.y();
+    out(i,3) = q.z();
+  }
+  return out;
 }
-  
-// [[Rcpp::export]]
-Rcpp::NumericVector rversor_(){
-  Eigen::Quaterniond q = Eigen::Quaterniond::UnitRandom();
-  return Rcpp::NumericVector::create(q.w(), q.x(), q.y(), q.z());
-}  
+
+// Rcpp::NumericVector rversor_(){
+//   Eigen::Quaterniond q = Eigen::Quaterniond::UnitRandom();
+//   return Rcpp::NumericVector::create(q.w(), q.x(), q.y(), q.z());
+// }  
 
 // [[Rcpp::export]]
 Rcpp::NumericMatrix rversors_(const unsigned n){

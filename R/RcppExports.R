@@ -45,10 +45,6 @@ slerp_ <- function(q1, q2, t) {
     .Call('_RcppQuaternions_slerp_', PACKAGE = 'RcppQuaternions', q1, q2, t)
 }
 
-rversor_ <- function() {
-    .Call('_RcppQuaternions_rversor_', PACKAGE = 'RcppQuaternions')
-}
-
 rversors_ <- function(n) {
     .Call('_RcppQuaternions_rversors_', PACKAGE = 'RcppQuaternions', n)
 }
