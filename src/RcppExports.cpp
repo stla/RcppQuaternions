@@ -18,49 +18,49 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// fromAxisAngle
-Rcpp::NumericVector fromAxisAngle(const Eigen::VectorXd& axis, const double& angle);
-RcppExport SEXP _RcppQuaternions_fromAxisAngle(SEXP axisSEXP, SEXP angleSEXP) {
+// fromAxisAngle_
+Rcpp::NumericVector fromAxisAngle_(const Eigen::VectorXd& axis, const double& angle);
+RcppExport SEXP _RcppQuaternions_fromAxisAngle_(SEXP axisSEXP, SEXP angleSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type axis(axisSEXP);
     Rcpp::traits::input_parameter< const double& >::type angle(angleSEXP);
-    rcpp_result_gen = Rcpp::wrap(fromAxisAngle(axis, angle));
+    rcpp_result_gen = Rcpp::wrap(fromAxisAngle_(axis, angle));
     return rcpp_result_gen;
 END_RCPP
 }
-// fromQuaternion
-Eigen::MatrixXd fromQuaternion(const Rcpp::NumericVector& v);
-RcppExport SEXP _RcppQuaternions_fromQuaternion(SEXP vSEXP) {
+// fromQuaternion_
+Eigen::MatrixXd fromQuaternion_(const Rcpp::NumericVector& v);
+RcppExport SEXP _RcppQuaternions_fromQuaternion_(SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(fromQuaternion(v));
+    rcpp_result_gen = Rcpp::wrap(fromQuaternion_(v));
     return rcpp_result_gen;
 END_RCPP
 }
-// toAxisAngle
-Rcpp::List toAxisAngle(const Rcpp::NumericVector& v);
-RcppExport SEXP _RcppQuaternions_toAxisAngle(SEXP vSEXP) {
+// toAxisAngle_
+Rcpp::List toAxisAngle_(const Rcpp::NumericVector& v);
+RcppExport SEXP _RcppQuaternions_toAxisAngle_(SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(toAxisAngle(v));
+    rcpp_result_gen = Rcpp::wrap(toAxisAngle_(v));
     return rcpp_result_gen;
 END_RCPP
 }
-// getRotation
-Rcpp::NumericVector getRotation(const Eigen::VectorXd& a, const Eigen::VectorXd& b);
-RcppExport SEXP _RcppQuaternions_getRotation(SEXP aSEXP, SEXP bSEXP) {
+// getRotation_
+Rcpp::NumericVector getRotation_(const Eigen::VectorXd& a, const Eigen::VectorXd& b);
+RcppExport SEXP _RcppQuaternions_getRotation_(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type a(aSEXP);
     Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(getRotation(a, b));
+    rcpp_result_gen = Rcpp::wrap(getRotation_(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -76,37 +76,37 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Matrix2AxisAngle
-Rcpp::List Matrix2AxisAngle(const Eigen::MatrixXd& m);
-RcppExport SEXP _RcppQuaternions_Matrix2AxisAngle(SEXP mSEXP) {
+// Matrix2AxisAngle_
+Rcpp::List Matrix2AxisAngle_(const Eigen::MatrixXd& m);
+RcppExport SEXP _RcppQuaternions_Matrix2AxisAngle_(SEXP mSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Eigen::MatrixXd& >::type m(mSEXP);
-    rcpp_result_gen = Rcpp::wrap(Matrix2AxisAngle(m));
+    rcpp_result_gen = Rcpp::wrap(Matrix2AxisAngle_(m));
     return rcpp_result_gen;
 END_RCPP
 }
-// toQuaternion
-Rcpp::NumericVector toQuaternion(const Eigen::MatrixXd& m);
-RcppExport SEXP _RcppQuaternions_toQuaternion(SEXP mSEXP) {
+// toQuaternion_
+Rcpp::NumericVector toQuaternion_(const Eigen::MatrixXd& m);
+RcppExport SEXP _RcppQuaternions_toQuaternion_(SEXP mSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Eigen::MatrixXd& >::type m(mSEXP);
-    rcpp_result_gen = Rcpp::wrap(toQuaternion(m));
+    rcpp_result_gen = Rcpp::wrap(toQuaternion_(m));
     return rcpp_result_gen;
 END_RCPP
 }
-// AngleAxis2matrix
-Eigen::MatrixXd AngleAxis2matrix(const double& angl, const Eigen::VectorXd& axs);
-RcppExport SEXP _RcppQuaternions_AngleAxis2matrix(SEXP anglSEXP, SEXP axsSEXP) {
+// AngleAxis2matrix_
+Eigen::MatrixXd AngleAxis2matrix_(const double& angl, const Eigen::VectorXd& axs);
+RcppExport SEXP _RcppQuaternions_AngleAxis2matrix_(SEXP anglSEXP, SEXP axsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const double& >::type angl(anglSEXP);
     Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type axs(axsSEXP);
-    rcpp_result_gen = Rcpp::wrap(AngleAxis2matrix(angl, axs));
+    rcpp_result_gen = Rcpp::wrap(AngleAxis2matrix_(angl, axs));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -158,14 +158,14 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppQuaternions_quatProd", (DL_FUNC) &_RcppQuaternions_quatProd, 2},
-    {"_RcppQuaternions_fromAxisAngle", (DL_FUNC) &_RcppQuaternions_fromAxisAngle, 2},
-    {"_RcppQuaternions_fromQuaternion", (DL_FUNC) &_RcppQuaternions_fromQuaternion, 1},
-    {"_RcppQuaternions_toAxisAngle", (DL_FUNC) &_RcppQuaternions_toAxisAngle, 1},
-    {"_RcppQuaternions_getRotation", (DL_FUNC) &_RcppQuaternions_getRotation, 2},
+    {"_RcppQuaternions_fromAxisAngle_", (DL_FUNC) &_RcppQuaternions_fromAxisAngle_, 2},
+    {"_RcppQuaternions_fromQuaternion_", (DL_FUNC) &_RcppQuaternions_fromQuaternion_, 1},
+    {"_RcppQuaternions_toAxisAngle_", (DL_FUNC) &_RcppQuaternions_toAxisAngle_, 1},
+    {"_RcppQuaternions_getRotation_", (DL_FUNC) &_RcppQuaternions_getRotation_, 2},
     {"_RcppQuaternions_AngleAxis2quaternion", (DL_FUNC) &_RcppQuaternions_AngleAxis2quaternion, 2},
-    {"_RcppQuaternions_Matrix2AxisAngle", (DL_FUNC) &_RcppQuaternions_Matrix2AxisAngle, 1},
-    {"_RcppQuaternions_toQuaternion", (DL_FUNC) &_RcppQuaternions_toQuaternion, 1},
-    {"_RcppQuaternions_AngleAxis2matrix", (DL_FUNC) &_RcppQuaternions_AngleAxis2matrix, 2},
+    {"_RcppQuaternions_Matrix2AxisAngle_", (DL_FUNC) &_RcppQuaternions_Matrix2AxisAngle_, 1},
+    {"_RcppQuaternions_toQuaternion_", (DL_FUNC) &_RcppQuaternions_toQuaternion_, 1},
+    {"_RcppQuaternions_AngleAxis2matrix_", (DL_FUNC) &_RcppQuaternions_AngleAxis2matrix_, 2},
     {"_RcppQuaternions_normalized", (DL_FUNC) &_RcppQuaternions_normalized, 1},
     {"_RcppQuaternions_slerp_", (DL_FUNC) &_RcppQuaternions_slerp_, 3},
     {"_RcppQuaternions_rversor_", (DL_FUNC) &_RcppQuaternions_rversor_, 0},

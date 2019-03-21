@@ -24,8 +24,8 @@ Rcpp::NumericVector	quatProd(const Rcpp::NumericVector & q1,
 } 
 
 // [[Rcpp::export]]
-Rcpp::NumericVector fromAxisAngle(const Eigen::VectorXd & axis, 
-                                  const double & angle)
+Rcpp::NumericVector fromAxisAngle_(const Eigen::VectorXd & axis, 
+                                   const double & angle)
 {
   Eigen::AngleAxisd AA(angle, axis.normalized());
   Eigen::Quaterniond q(AA);
@@ -34,7 +34,7 @@ Rcpp::NumericVector fromAxisAngle(const Eigen::VectorXd & axis,
 
 
 // [[Rcpp::export]]
-Eigen::MatrixXd fromQuaternion(const Rcpp::NumericVector & v)
+Eigen::MatrixXd fromQuaternion_(const Rcpp::NumericVector & v)
 {
   Eigen::Quaterniond q(v[0], v[1], v[2], v[3]);
   Eigen::Quaterniond qnorm = q.normalized();
@@ -44,7 +44,7 @@ Eigen::MatrixXd fromQuaternion(const Rcpp::NumericVector & v)
 
 
 // [[Rcpp::export]]
-Rcpp::List toAxisAngle(const Rcpp::NumericVector & v)
+Rcpp::List toAxisAngle_(const Rcpp::NumericVector & v)
 {
   Eigen::Quaterniond q(v[0],v[1],v[2],v[3]);
   Eigen::AngleAxisd AA(q);
@@ -56,8 +56,8 @@ Rcpp::List toAxisAngle(const Rcpp::NumericVector & v)
 
 
 // [[Rcpp::export]]
-Rcpp::NumericVector getRotation(const Eigen::VectorXd & a, 
-                                const Eigen::VectorXd & b)
+Rcpp::NumericVector getRotation_(const Eigen::VectorXd & a, 
+                                 const Eigen::VectorXd & b)
 {
   if(a.size() != 3 || b.size() != 3){
     throw Rcpp::exception("Vectors must have length 3");
@@ -83,7 +83,7 @@ Rcpp::NumericVector AngleAxis2quaternion(const double & angl,
 
 
 // [[Rcpp::export]]
-Rcpp::List Matrix2AxisAngle(const Eigen::MatrixXd & m)
+Rcpp::List Matrix2AxisAngle_(const Eigen::MatrixXd & m)
 {
   // m must be a valid rotation matrix
   if(m.rows() != 3 || m.cols() != 3){
@@ -103,7 +103,7 @@ Rcpp::List Matrix2AxisAngle(const Eigen::MatrixXd & m)
 }	
 
 // [[Rcpp::export]]
-Rcpp::NumericVector toQuaternion(const Eigen::MatrixXd & m)
+Rcpp::NumericVector toQuaternion_(const Eigen::MatrixXd & m)
 {
   if(m.rows() != 3 || m.cols() != 3){
     throw Rcpp::exception("`M` must be a 3x3 matrix");
@@ -119,8 +119,8 @@ Rcpp::NumericVector toQuaternion(const Eigen::MatrixXd & m)
 }	
 
 // [[Rcpp::export]]
-Eigen::MatrixXd AngleAxis2matrix(const double & angl, 
-                                 const Eigen::VectorXd & axs)
+Eigen::MatrixXd AngleAxis2matrix_(const double & angl, 
+                                  const Eigen::VectorXd & axs)
 {
   Eigen::AngleAxisd AA = Eigen::AngleAxisd(angl, axs.normalized());
   Eigen::Matrix3d m3 = Eigen::Matrix3d(AA);

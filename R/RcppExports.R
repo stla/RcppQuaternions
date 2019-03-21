@@ -5,36 +5,36 @@ quatProd <- function(q1, q2) {
     .Call('_RcppQuaternions_quatProd', PACKAGE = 'RcppQuaternions', q1, q2)
 }
 
-fromAxisAngle <- function(axis, angle) {
-    .Call('_RcppQuaternions_fromAxisAngle', PACKAGE = 'RcppQuaternions', axis, angle)
+fromAxisAngle_ <- function(axis, angle) {
+    .Call('_RcppQuaternions_fromAxisAngle_', PACKAGE = 'RcppQuaternions', axis, angle)
 }
 
-fromQuaternion <- function(v) {
-    .Call('_RcppQuaternions_fromQuaternion', PACKAGE = 'RcppQuaternions', v)
+fromQuaternion_ <- function(v) {
+    .Call('_RcppQuaternions_fromQuaternion_', PACKAGE = 'RcppQuaternions', v)
 }
 
-toAxisAngle <- function(v) {
-    .Call('_RcppQuaternions_toAxisAngle', PACKAGE = 'RcppQuaternions', v)
+toAxisAngle_ <- function(v) {
+    .Call('_RcppQuaternions_toAxisAngle_', PACKAGE = 'RcppQuaternions', v)
 }
 
-getRotation <- function(a, b) {
-    .Call('_RcppQuaternions_getRotation', PACKAGE = 'RcppQuaternions', a, b)
+getRotation_ <- function(a, b) {
+    .Call('_RcppQuaternions_getRotation_', PACKAGE = 'RcppQuaternions', a, b)
 }
 
 AngleAxis2quaternion <- function(angl, axs) {
     .Call('_RcppQuaternions_AngleAxis2quaternion', PACKAGE = 'RcppQuaternions', angl, axs)
 }
 
-Matrix2AxisAngle <- function(m) {
-    .Call('_RcppQuaternions_Matrix2AxisAngle', PACKAGE = 'RcppQuaternions', m)
+Matrix2AxisAngle_ <- function(m) {
+    .Call('_RcppQuaternions_Matrix2AxisAngle_', PACKAGE = 'RcppQuaternions', m)
 }
 
-toQuaternion <- function(m) {
-    .Call('_RcppQuaternions_toQuaternion', PACKAGE = 'RcppQuaternions', m)
+toQuaternion_ <- function(m) {
+    .Call('_RcppQuaternions_toQuaternion_', PACKAGE = 'RcppQuaternions', m)
 }
 
-AngleAxis2matrix <- function(angl, axs) {
-    .Call('_RcppQuaternions_AngleAxis2matrix', PACKAGE = 'RcppQuaternions', angl, axs)
+AngleAxis2matrix_ <- function(angl, axs) {
+    .Call('_RcppQuaternions_AngleAxis2matrix_', PACKAGE = 'RcppQuaternions', angl, axs)
 }
 
 normalized <- function(v) {
