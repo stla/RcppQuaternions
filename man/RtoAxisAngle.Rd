@@ -18,7 +18,7 @@ Axis and angle of a rotation given by its matrix.
 \examples{
 theta <- 2
 R <- rbind(c(cos(theta), sin(theta), 0), 
-c(-sin(theta), cos(theta), 0), 
-c(0, 0, 1))
+           c(-sin(theta), cos(theta), 0), 
+           c(0, 0, 1))
 RtoAxisAngle(R)
 }

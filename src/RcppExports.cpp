@@ -18,6 +18,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// quatInv
+Rcpp::NumericVector quatInv(const Rcpp::NumericVector& q);
+RcppExport SEXP _RcppQuaternions_quatInv(SEXP qSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type q(qSEXP);
+    rcpp_result_gen = Rcpp::wrap(quatInv(q));
+    return rcpp_result_gen;
+END_RCPP
+}
 // fromAxisAngle_
 Rcpp::NumericVector fromAxisAngle_(const Eigen::VectorXd& axis, const double& angle);
 RcppExport SEXP _RcppQuaternions_fromAxisAngle_(SEXP axisSEXP, SEXP angleSEXP) {
@@ -148,6 +159,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppQuaternions_quatProd", (DL_FUNC) &_RcppQuaternions_quatProd, 2},
+    {"_RcppQuaternions_quatInv", (DL_FUNC) &_RcppQuaternions_quatInv, 1},
     {"_RcppQuaternions_fromAxisAngle_", (DL_FUNC) &_RcppQuaternions_fromAxisAngle_, 2},
     {"_RcppQuaternions_fromQuaternion_", (DL_FUNC) &_RcppQuaternions_fromQuaternion_, 1},
     {"_RcppQuaternions_toAxisAngle_", (DL_FUNC) &_RcppQuaternions_toAxisAngle_, 1},

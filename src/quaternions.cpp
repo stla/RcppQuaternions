@@ -24,6 +24,15 @@ Rcpp::NumericVector	quatProd(const Rcpp::NumericVector & q1,
 } 
 
 // [[Rcpp::export]]
+Rcpp::NumericVector	quatInv(const Rcpp::NumericVector & q)
+{
+  Eigen::Quaterniond qa(q[0], q[1], q[2], q[3]);
+  Eigen::Quaterniond qinv = qa.inverse();
+  return Rcpp::NumericVector::create(
+    qinv.w(), qinv.x(), qinv.y(), qinv.z() );  
+} 
+
+// [[Rcpp::export]]
 Rcpp::NumericVector fromAxisAngle_(const Eigen::VectorXd & axis, 
                                    const double & angle)
 {

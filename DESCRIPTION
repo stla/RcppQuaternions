@@ -2,7 +2,7 @@ Package: RcppQuaternions
 Type: Package
 Title: Quaternions and rotations
 Version: 1.0
-Date: 2019-03-21
+Date: 2020-02-26
 Author: Stéphane Laurent
 Maintainer: Stéphane Laurent <laurent_step@yahoo.fr>
 Description: More about what it does (maybe more than one line)
@@ -13,4 +13,4 @@ Suggests: rgl
 LinkingTo: Rcpp, RcppEigen
 URL: https://github.com/stla/RcppQuaternions
 BugReports: https://github.com/stla/RcppQuaternions/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2

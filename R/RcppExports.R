@@ -5,6 +5,10 @@ quatProd <- function(q1, q2) {
     .Call(`_RcppQuaternions_quatProd`, q1, q2)
 }
 
+quatInv <- function(q) {
+    .Call(`_RcppQuaternions_quatInv`, q)
+}
+
 fromAxisAngle_ <- function(axis, angle) {
     .Call(`_RcppQuaternions_fromAxisAngle_`, axis, angle)
 }

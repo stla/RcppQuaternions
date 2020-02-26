@@ -7,6 +7,15 @@ qprod <- function(q1, q2){
   quatProd(q1, q2)
 }
 
+#' Quaternion inverse
+#' @description Inverse of a quaternion.
+#' @param q quaternion
+#' @return A quaternion, the inverse of \code{q}.
+#' @export
+qinv <- function(q){
+  quatInv(q)
+}
+
 #' Quaternion from axis and angle
 #' @description Quaternion representation of a rotation given by axis and angle.
 #' @param axis rotation axis, a vector of length 3
